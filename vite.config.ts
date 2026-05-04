@@ -11,13 +11,12 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg'],
       manifest: {
-        name: 'Training Session Timer',
-        short_name: 'Timer',
-        description: 'Session timer with block announcements for training sessions',
+        name: "Anna's Training Timer",
+        short_name: 'Training Timer',
+        description: 'Session timer with block announcements for dog training sessions',
         theme_color: '#1e293b',
         background_color: '#0f172a',
         display: 'standalone',
-        orientation: 'portrait',
         icons: [
           {
             src: 'pwa-192x192.png',
