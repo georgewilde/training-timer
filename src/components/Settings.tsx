@@ -51,7 +51,7 @@ export function Settings({ config, onChange }: SettingsProps) {
           <button
             key={p.label}
             onClick={() => applyPreset(p)}
-            className={`rounded-xl px-5 py-2.5 text-base font-medium transition-colors landscape:px-3 landscape:py-1 landscape:text-xs ${
+            className={`rounded-xl px-5 py-2.5 text-base font-medium transition-colors landscape:px-4 landscape:py-2 ${
               sessionNum === p.session && blockNum === p.block
                 ? 'bg-emerald-600 text-white'
                 : 'bg-slate-700 text-slate-300 active:bg-slate-600'
@@ -62,9 +62,9 @@ export function Settings({ config, onChange }: SettingsProps) {
         ))}
       </div>
 
-      <div className="grid grid-cols-2 gap-4 w-full landscape:gap-2">
+      <div className="grid grid-cols-2 gap-4 w-full landscape:gap-3">
         <label className="flex flex-col gap-1.5">
-          <span className="text-base text-slate-400 landscape:text-xs">Session (min)</span>
+          <span className="text-base text-slate-400">Session (min)</span>
           <input
             type="number"
             inputMode="numeric"
@@ -76,7 +76,7 @@ export function Settings({ config, onChange }: SettingsProps) {
           />
         </label>
         <label className="flex flex-col gap-1.5">
-          <span className="text-base text-slate-400 landscape:text-xs">Block (min)</span>
+          <span className="text-base text-slate-400">Block (min)</span>
           <input
             type="number"
             inputMode="numeric"
@@ -90,7 +90,7 @@ export function Settings({ config, onChange }: SettingsProps) {
       </div>
 
       {isValid && (
-        <p className="text-base text-slate-400 landscape:text-xs">
+        <p className="text-base text-slate-400">
           {totalBlocks} block{totalBlocks !== 1 ? 's' : ''}
           {isUneven && (
             <span className="text-amber-400 ml-1">
@@ -101,7 +101,7 @@ export function Settings({ config, onChange }: SettingsProps) {
       )}
 
       {!isValid && session !== '' && block !== '' && (
-        <p className="text-base text-red-400 landscape:text-xs">
+        <p className="text-base text-red-400">
           Block duration must be between 1 and session length
         </p>
       )}

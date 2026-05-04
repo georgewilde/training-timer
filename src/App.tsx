@@ -56,7 +56,7 @@ export default function App() {
   return (
     <div className="flex flex-col min-h-dvh bg-slate-900 text-white select-none">
       <header className="pt-6 pb-2 text-center landscape:pt-2 landscape:pb-0">
-        <h1 className="text-2xl font-medium text-slate-500 tracking-wider uppercase landscape:text-sm">
+        <h1 className="text-2xl font-medium text-slate-500 tracking-wider uppercase landscape:text-xl">
           Training Timer
         </h1>
       </header>
