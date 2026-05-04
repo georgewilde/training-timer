@@ -54,16 +54,16 @@ export default function App() {
   }, [timer, wakeLock]);
 
   return (
-    <div className="flex flex-col h-full bg-slate-900 text-white select-none">
-      <header className="pt-6 pb-2 text-center">
-        <h1 className="text-lg font-medium text-slate-500 tracking-wider uppercase">
+    <div className="flex flex-col min-h-dvh bg-slate-900 text-white select-none">
+      <header className="pt-6 pb-2 text-center landscape:pt-2 landscape:pb-0">
+        <h1 className="text-lg font-medium text-slate-500 tracking-wider uppercase landscape:text-sm">
           Training Timer
         </h1>
       </header>
 
-      <main className="flex flex-col flex-1 px-4">
+      <main className="flex flex-col flex-1 px-4 landscape:flex-row landscape:items-stretch landscape:gap-2 landscape:px-6">
         {timer.phase === 'idle' ? (
-          <div className="flex flex-col flex-1 justify-center">
+          <div className="flex flex-col flex-1 justify-center landscape:justify-center">
             <Settings config={config} onChange={setConfig} />
           </div>
         ) : (

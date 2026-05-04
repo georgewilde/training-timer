@@ -60,11 +60,11 @@ export function Controls({
   onToggleMute,
 }: ControlsProps) {
   return (
-    <div className="flex items-center justify-center gap-4 py-6">
+    <div className="flex items-center justify-center gap-4 py-6 landscape:flex-col landscape:justify-center landscape:py-2 landscape:gap-3 landscape:shrink-0 landscape:w-36">
       {phase === 'idle' && (
         <button
           onClick={onStart}
-          className="flex items-center justify-center gap-2 rounded-2xl bg-emerald-600 px-10 py-4 text-xl font-semibold text-white active:bg-emerald-700 transition-colors"
+          className="flex items-center justify-center gap-2 rounded-2xl bg-emerald-600 px-10 py-4 text-xl font-semibold text-white active:bg-emerald-700 transition-colors landscape:px-6 landscape:py-8 landscape:w-full landscape:text-2xl"
         >
           <PlayIcon />
           Start
@@ -74,7 +74,7 @@ export function Controls({
       {phase === 'running' && (
         <button
           onClick={onPause}
-          className="flex items-center justify-center gap-2 rounded-2xl bg-amber-600 px-8 py-4 text-xl font-semibold text-white active:bg-amber-700 transition-colors"
+          className="flex items-center justify-center gap-2 rounded-2xl bg-amber-600 px-8 py-4 text-xl font-semibold text-white active:bg-amber-700 transition-colors landscape:px-4 landscape:py-3 landscape:w-full"
         >
           <PauseIcon />
           Pause
@@ -84,7 +84,7 @@ export function Controls({
       {phase === 'paused' && (
         <button
           onClick={onResume}
-          className="flex items-center justify-center gap-2 rounded-2xl bg-emerald-600 px-8 py-4 text-xl font-semibold text-white active:bg-emerald-700 transition-colors"
+          className="flex items-center justify-center gap-2 rounded-2xl bg-emerald-600 px-8 py-4 text-xl font-semibold text-white active:bg-emerald-700 transition-colors landscape:px-4 landscape:py-3 landscape:w-full"
         >
           <PlayIcon />
           Resume
@@ -95,7 +95,7 @@ export function Controls({
         <>
           <button
             onClick={onReset}
-            className="flex items-center justify-center rounded-2xl bg-slate-700 p-4 text-white active:bg-slate-600 transition-colors"
+            className="flex items-center justify-center rounded-2xl bg-slate-700 p-4 text-white active:bg-slate-600 transition-colors landscape:w-full landscape:p-3"
             aria-label="Reset"
           >
             <ResetIcon />
@@ -103,7 +103,7 @@ export function Controls({
 
           <button
             onClick={onToggleMute}
-            className={`flex items-center justify-center rounded-2xl p-4 text-white transition-colors ${
+            className={`flex items-center justify-center rounded-2xl p-4 text-white transition-colors landscape:w-full landscape:p-3 ${
               isMuted ? 'bg-red-700 active:bg-red-600' : 'bg-slate-700 active:bg-slate-600'
             }`}
             aria-label={isMuted ? 'Unmute' : 'Mute'}
