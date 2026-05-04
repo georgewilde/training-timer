@@ -4,9 +4,11 @@ import type { TimerConfig } from '../types';
 interface SettingsProps {
   config: TimerConfig;
   onChange: (config: TimerConfig) => void;
+  isMuted: boolean;
+  onToggleMute: () => void;
 }
 
-export function Settings({ config, onChange }: SettingsProps) {
+export function Settings({ config, onChange, isMuted, onToggleMute }: SettingsProps) {
   const [session, setSession] = useState(String(config.sessionMinutes));
   const [block, setBlock] = useState(String(config.blockMinutes));
 
@@ -105,6 +107,27 @@ export function Settings({ config, onChange }: SettingsProps) {
           Block duration must be between 1 and session length
         </p>
       )}
+
+      <button
+        onClick={onToggleMute}
+        className={`flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-base font-medium transition-colors ${
+          isMuted
+            ? 'bg-red-700 text-white active:bg-red-600'
+            : 'bg-slate-700 text-slate-300 active:bg-slate-600'
+        }`}
+      >
+        {isMuted ? (
+          <>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 5 6 9H2v6h4l5 4zM22 9l-6 6M16 9l6 6"/></svg>
+            Muted
+          </>
+        ) : (
+          <>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+            Sound On
+          </>
+        )}
+      </button>
     </div>
   );
 }

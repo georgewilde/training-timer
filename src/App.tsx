@@ -96,7 +96,7 @@ export default function App() {
       <main className="flex flex-col flex-1 px-4 landscape:flex-row landscape:items-stretch landscape:gap-2 landscape:px-6">
         {timer.phase === 'idle' ? (
           <div className="flex flex-col flex-1 justify-center landscape:justify-center">
-            <Settings config={config} onChange={setConfig} />
+            <Settings config={config} onChange={setConfig} isMuted={speech.isMuted} onToggleMute={speech.toggleMute} />
           </div>
         ) : (
           <TimerDisplay
